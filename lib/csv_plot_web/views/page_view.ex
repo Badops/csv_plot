@@ -1,7 +1,9 @@
 defmodule CsvPlotWeb.PageView do
   use CsvPlotWeb, :view
+  alias CsvPlotWeb.PageView
 
-  def render("time_series.json", %{time_series: [time_list, value_list]}) do
-    %{times: time_list, values: value_list}
+  def render("time_value_list.json", %{time_value_list: [csv_params]}) do
+    %{times: csv_params.time, values: csv_params.value}
   end
 end
+
